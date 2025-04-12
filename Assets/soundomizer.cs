@@ -1,0 +1,74 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class soundomizer : MonoBehaviour
+{
+    [SerializeField] AudioSource player;
+    public float[] aer;
+    public float[] freq = new float[512];
+
+    public float time = 0;
+    public float scale = 0;
+    public float totalT = 0;
+    public float totalM = 0;
+    public float totalB = 0;
+    public int spectrumSize = 512; // Must be a power of 2
+    private float[] spectrumData;
+    private float t = 0;
+    Renderer r;
+
+    void Start()
+    {
+        spectrumData = new float[spectrumSize];
+        r = GetComponent<Renderer>();
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {   
+
+        if (player == null) player = FindObjectOfType<AudioSource>();
+
+        t = Mathf.Lerp(t, player.GetOutputData(1, 0)[0], 0.3f);
+        spectrumData = player.GetSpectrumData(spectrumSize, 0, FFTWindow.BlackmanHarris);
+
+        float bass = GetFrequencyRange(20, 250);
+        float mid = GetFrequencyRange(250, 4000);
+        float treble = GetFrequencyRange(4000, 20000);
+
+        //Debug.Log($"Bass: {bass}, Mid: {mid}, Treble: {treble}, Time: {t}");
+        scale = Mathf.Lerp(scale + Mathf.Abs(t * 0.015f), 0, 0.22f);
+        time += scale;
+        totalB += bass;
+        totalM += mid;
+        totalT += treble;
+
+        r.material.SetFloat("_Volume", time);
+        r.material.SetFloat("_Scale", Mathf.Abs(t));
+        r.material.SetFloat("_Bass", bass);
+        r.material.SetFloat("_Mid", mid);
+        r.material.SetFloat("_Treble", treble);
+        r.material.SetFloat("_TotalBass", totalB);
+        r.material.SetFloat("_TotalMid", totalM);
+        r.material.SetFloat("_TotalTreble", totalT);
+
+    }
+    float GetFrequencyRange(float minFreq, float maxFreq)
+    {
+        float sum = 0f;
+        float sampleRate = AudioSettings.outputSampleRate;
+        float freqPerBin = sampleRate / 2f / spectrumSize;
+
+        int minIndex = Mathf.FloorToInt(minFreq / freqPerBin);
+        int maxIndex = Mathf.CeilToInt(maxFreq / freqPerBin);
+
+        for (int i = minIndex; i <= maxIndex && i < spectrumSize; i++)
+        {
+            sum += spectrumData[i];
+        }
+
+        return sum;
+    }
+}
