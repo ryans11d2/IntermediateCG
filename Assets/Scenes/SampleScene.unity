@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18339887, g: 0.22899944, b: 0.3060459, a: 1}
+  m_IndirectSpecularColor: {r: 0.18339886, g: 0.22899944, b: 0.30604595, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -503,7 +503,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1547227854}
-  aer: []
   freq:
   - 0
   - 0
@@ -1531,7 +1530,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &348576483
 Transform:
   m_ObjectHideFlags: 0
@@ -2065,7 +2064,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &605690717
 Transform:
   m_ObjectHideFlags: 0
@@ -2262,7 +2261,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 605690721}
-  aer: []
   freq:
   - 0
   - 0
@@ -2817,7 +2815,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1547227854}
-  aer: []
   freq:
   - 0
   - 0
@@ -4449,7 +4446,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1547227854}
-  aer: []
   freq:
   - 0
   - 0
@@ -5216,7 +5212,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1547227854}
-  aer: []
   freq:
   - 0
   - 0
