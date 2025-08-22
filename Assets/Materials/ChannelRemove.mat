@@ -7,15 +7,13 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Sketch
-  m_Shader: {fileID: -6465566751694194690, guid: da94c572c4e7bd1428e22fdb3b34e100,
+  m_Name: ChannelRemove
+  m_Shader: {fileID: -6465566751694194690, guid: a7e1a60d5d0f9c04a856d6d13fe22a0f,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
-  - _OVERLAY
-  m_InvalidKeywords:
-  - _COLOUR
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -84,16 +82,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Age: 200
     - _AlphaClip: 0
     - _AlphaToMask: 0
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
-    - _COLOUR: 1
-    - _CelShading: 0.057
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
-    - _ColourThreshold: 0.054
     - _Cull: 2
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
@@ -104,39 +100,31 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _LineVariance: 0.04
-    - _LineWeight: 0.001
-    - _LineWieght: 0.001
+    - _INVERT: 0
     - _Metallic: 0
-    - _MinWeight: 0.42
-    - _NormalThreshold: 0.175
-    - _OVERLAY: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _SHADING: 0
-    - _Saturation: 0.239
-    - _Slices: 5
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
+    - _Speed: 6.11
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
-    - _Toon: 0
-    - _VarianceScale: 10
-    - _Warp: 0.015
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _ColourA: {r: 1, g: 0, b: 0, a: 1}
+    - _ColourB: {r: 0, g: 1, b: 0, a: 1}
+    - _ColourC: {r: 0, g: 0, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Slices: {r: 3.23, g: 10.9, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &1114357689881889418
+--- !u!114 &121520348926911582
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

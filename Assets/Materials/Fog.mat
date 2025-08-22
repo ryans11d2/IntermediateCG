@@ -104,7 +104,7 @@ Material:
     - _MaxDepth: 78.76
     - _Metallic: 0
     - _Noise: 0.324
-    - _NoiseScale: 1500
+    - _NoiseScale: 0
     - _NoiseSpeed: 109
     - _OcclusionStrength: 1
     - _Parallax: 0.005
