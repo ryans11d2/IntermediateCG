@@ -98,11 +98,17 @@ public class SceneManager : MonoBehaviour
     }
 
     void Update()
-    {   
+    {
 
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            GetComponent<Camera>().orthographic = !GetComponent<Camera>().orthographic;
+        }
         
-        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit, 100)) {
-            if (hit.collider.gameObject.TryGetComponent<ObjectManager>(out ObjectManager ob)) {
+        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit, 100))
+        {
+            if (hit.collider.gameObject.TryGetComponent<ObjectManager>(out ObjectManager ob))
+            {
                 if (lookObject == null) lookObject = ob;
                 if (lookObject != ob) lookObject.ToggleOutline(false);
                 lookObject = ob;
